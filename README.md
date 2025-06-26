@@ -1,6 +1,6 @@
-This is SageMathCell - a Sage computation web service.
+This is passagemath-cell-server - a Sage computation web service.
 
-Our mailing list is https://groups.google.com/forum/#!forum/sage-cell
+It is a fork of SageMathCell, which has a mailing list at https://groups.google.com/forum/#!forum/sage-cell
 
 # Security Warning
 
@@ -23,37 +23,23 @@ In particular, system packages installed in the base container are listed [here]
     sudo ln -s /usr/bin/nodejs /usr/bin/node
     ```
 
-2.  Get and build Sage (`export MAKE="make -j8"` or something similar can speed things up):
+2.  Clone and create a virtual environment for passagemath-cell-server:
 
     ```bash
-    git clone https://github.com/sagemath/sage.git
-    pushd sage
-    ./bootstrap
-    ./configure --enable-download-from-upstream-url
-    # read messages at the end, follow instructions given there.
-    # possibly install more system packages (using apt-get, if on Debian/Ubuntu)
-    make
-    popd
+    git clone https://github.com/passagemath/passagemath-cell-server.git
+    cd passagemath-cell-server
+    python3 -m venv .venv
+    . .venv/bin/activate
+    pip install -v -e .
     ```
 
-3.  Prepare Sage for SageMathCell:
+3.  Build SageMathCell:
 
-    ```bash
-    sage/sage -pip install lockfile
-    sage/sage -pip install paramiko
-    sage/sage -pip install sockjs-tornado
-    sage/sage -pip install sqlalchemy
+    ```
+    sage -sh -c make
     ```
 
-4.  Build SageMathCell:
-
-    ```bash
-    git clone https://github.com/sagemath/sagecell.git
-    pushd sagecell
-    ../sage/sage -sh -c make
-    ```
-    
-To build just the Javascript components, from the `sagecell` directory run
+To build just the Javascript components, from the `passagemath-cell-server` directory run
 
 ```bash
 make static/embedded_sagecell.js
@@ -69,14 +55,14 @@ make static/embedded_sagecell.js
 
 # Configuration
 
-1.  Go into the `sagecell` directory (you are there in the end of the above instructions).
+1.  Go into the `passagemath-cell-server` directory (you are there in the end of the above instructions).
 2.  Copy `config_default.py` to `config.py`. (Or fill `config.py` only with entries that you wish to change from default values.)
 3.  Edit `config.py` according to your needs. Of particular interest are `host` and `username` entries of the `provider_info` dictionary: you should be able to SSH to `username@host` *without typing in a password*. For example, by default, it assumes you can do `ssh localhost` without typing in a password. Unless you are running a private and **firewalled** server for youself, you’ll want to change this to a more restrictive account; otherwise **anyone will be able to execute any code under your username**. You can set up a passwordless account using SSH: type “ssh passwordless login” into Google to find lots of guides for doing this, like http://www.debian-administration.org/articles/152. You may also wish to adjust `db_config["uri"]` (make the database files readable *only* by the trusted account).
 4.  You may want to adjust `log.py` to suit your needs and/or adjust system configuration. By default logging is done via syslog which handles multiple processes better than plain files.
 5.  Start the server via
 
     ```bash
-    ../sage/sage web_server.py [-p <PORT_NUMBER>]
+    sage web_server.py [-p <PORT_NUMBER>]
     ```
 
     where the default `<PORT_NUMBER>` is `8888` and go to `http://localhost:<PORT_NUMBER>` to use the Sage Cell server.
