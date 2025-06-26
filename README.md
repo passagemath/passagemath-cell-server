@@ -62,7 +62,7 @@ make static/embedded_sagecell.js
 5.  Start the server via
 
     ```bash
-    sage web_server.py [-p <PORT_NUMBER>]
+    sage-cell-server [-p <PORT_NUMBER>]
     ```
 
     where the default `<PORT_NUMBER>` is `8888` and go to `http://localhost:<PORT_NUMBER>` to use the Sage Cell server.
