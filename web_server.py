@@ -100,7 +100,7 @@ def get_ip_address(ifname):
     )[20:24])
 
 
-if __name__ == "__main__":
+def main():
     import argparse
     parser = argparse.ArgumentParser(description='Launch a SageCell web server',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -163,3 +163,7 @@ if __name__ == "__main__":
     app.ioloop.start()
     pidlock.release()
     logger.info('SageCell server stopped')
+
+
+if __name__ == "__main__":
+    main()

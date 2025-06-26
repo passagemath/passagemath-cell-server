@@ -18,5 +18,8 @@ dependencies = [
     'passagemath-symbolics',
 ]
 
+[project.scripts]
+sage-cell-server = "sagecell.web_server:main"
+
 [tool.setuptools]
 package-dir = {"sagecell" = ""}
