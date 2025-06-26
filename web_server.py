@@ -11,11 +11,11 @@ import psutil
 import tornado.ioloop
 import tornado.web
 
-import handlers
-from log import logger
-from kernel_dealer import KernelDealer
-import misc
-import permalink
+from . import handlers
+from .log import logger
+from .kernel_dealer import KernelDealer
+from . import misc
+from . import permalink
 
 
 config = misc.Config()

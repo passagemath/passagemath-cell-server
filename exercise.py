@@ -1,4 +1,4 @@
-from interact_sagecell import interact,Button,HtmlBox, UpdateButton
+from .interact_sagecell import interact,Button,HtmlBox, UpdateButton
 
 
 #################

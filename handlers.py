@@ -16,7 +16,7 @@ import tornado.websocket
 import sockjs.tornado
 from zmq.utils import jsonapi
 
-from log import StatsMessage, logger, stats_logger
+from .log import StatsMessage, logger, stats_logger
 
 
 try:
@@ -31,7 +31,7 @@ try:
 except ImportError:
     tab_completion = {}
 
-import misc
+from . import misc
 config = misc.Config()
 
 

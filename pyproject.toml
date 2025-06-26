@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "passagemath-cell-server"
+version = "1.0.0"
 dependencies = [
     # from README.md
     'lockfile',
@@ -16,3 +17,6 @@ dependencies = [
     'passagemath-repl',
     'passagemath-symbolics',
 ]
+
+[tool.setuptools]
+package-dir = {"sagecell" = ""}

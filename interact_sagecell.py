@@ -98,7 +98,7 @@ import uuid
 from sage.misc.decorators import decorator_defaults
 
 
-from misc import session_metadata
+from .misc import session_metadata
 
 
 __interacts = {}

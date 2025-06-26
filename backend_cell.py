@@ -25,7 +25,7 @@ from sage.repl.rich_output.backend_ipython import BackendIPython
 from sage.repl.rich_output.output_catalog import *
 
 
-from misc import display_file, display_html, display_message
+from .misc import display_file, display_html, display_message
 
 
 class BackendCell(BackendIPython):

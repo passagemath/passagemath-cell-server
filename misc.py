@@ -28,13 +28,13 @@ class Config(object):
     configuration files
     """
     def __init__(self):
-        import config_default
+        from . import config_default
 
         self.config = None
         self.config_default = config_default
 
         try:
-            import config
+            from . import config
             self.config = config
         except ImportError:
             pass

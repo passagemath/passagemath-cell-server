@@ -13,8 +13,8 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 
-import permalink
-from log import permalink_logger as logger
+from . import permalink
+from .log import permalink_logger as logger
 
 
 PERMALINK_DB = "sqlalchemy"
