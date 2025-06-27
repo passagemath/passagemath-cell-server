@@ -265,10 +265,15 @@ def setup_sage():
         sys._sage_.display_message(msg)
         
     from functools import partial
-    import pylab
-    pylab.show = partial(mp_show, savefig=pylab.savefig)
-    import matplotlib.pyplot
-    matplotlib.pyplot.show = partial(mp_show, savefig=matplotlib.pyplot.savefig)
+
+    try:
+        import pylab
+        import matplotlib.pyplot
+    except ImportError:
+        pass
+    else:
+        pylab.show = partial(mp_show, savefig=pylab.savefig)
+        matplotlib.pyplot.show = partial(mp_show, savefig=matplotlib.pyplot.savefig)
 
     # The first plot takes about 2 seconds to generate (presumably
     # because lots of things, like matplotlib, are imported).  We plot
