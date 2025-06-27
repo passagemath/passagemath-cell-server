@@ -280,7 +280,7 @@ def setup_sage():
         logger.exception("plotting exception")
 
 
-if __name__ == "__main__":        
+def main():
     parser = argparse.ArgumentParser(
         description="Launch a kernel provider for SageMathCell")
     parser.add_argument("--address",
@@ -304,3 +304,7 @@ if __name__ == "__main__":
 
     signal.signal(signal.SIGTERM, signal_handler)
     provider.start()
+
+
+if __name__ == "__main__":
+    main()

@@ -34,6 +34,7 @@ ssh = [
 
 [project.scripts]
 sage-cell-server = "sagecell.web_server:main"
+sage-cell-kernel-provider = "sagecell.kernel_provider:main"
 
 [tool.setuptools]
 package-dir = {"sagecell" = ""}
