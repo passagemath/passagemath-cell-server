@@ -80,7 +80,6 @@ class SageCellServer(tornado.web.Application):
         start_providers(self.kernel_dealer.port, config.get("providers"), dir)
         self.completer = handlers.Completer(self.kernel_dealer)
         db = importlib.import_module('sagecell.db_' + config.get('db'))
-        print(db)
         self.db = db.DB(config.get('db_config')['uri'])
         self.ioloop = tornado.ioloop.IOLoop.current()
         super(SageCellServer, self).__init__(handlers_list, **settings)
