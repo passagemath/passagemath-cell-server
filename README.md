@@ -56,10 +56,11 @@ make static/embedded_sagecell.js
 # Configuration
 
 1.  Go into the `passagemath-cell-server` directory (you are there in the end of the above instructions).
-2.  Copy `config_default.py` to `config.py`. (Or fill `config.py` only with entries that you wish to change from default values.)
-3.  Edit `config.py` according to your needs. Of particular interest are `host` and `username` entries of the `provider_info` dictionary: you should be able to SSH to `username@host` *without typing in a password*. For example, by default, it assumes you can do `ssh localhost` without typing in a password. Unless you are running a private and **firewalled** server for youself, you’ll want to change this to a more restrictive account; otherwise **anyone will be able to execute any code under your username**. You can set up a passwordless account using SSH: type “ssh passwordless login” into Google to find lots of guides for doing this, like http://www.debian-administration.org/articles/152. You may also wish to adjust `db_config["uri"]` (make the database files readable *only* by the trusted account).
-4.  You may want to adjust `log.py` to suit your needs and/or adjust system configuration. By default logging is done via syslog which handles multiple processes better than plain files.
-5.  Start the server via
+2.  `cp templates/tos_default.html static/tos.html`
+3.  Copy `config_default.py` to `config.py`. (Or fill `config.py` only with entries that you wish to change from default values.)
+4.  Edit `config.py` according to your needs. Of particular interest are `host` and `username` entries of the `provider_info` dictionary: you should be able to SSH to `username@host` *without typing in a password*. For example, by default, it assumes you can do `ssh localhost` without typing in a password. Unless you are running a private and **firewalled** server for youself, you’ll want to change this to a more restrictive account; otherwise **anyone will be able to execute any code under your username**. You can set up a passwordless account using SSH: type “ssh passwordless login” into Google to find lots of guides for doing this, like http://www.debian-administration.org/articles/152. You may also wish to adjust `db_config["uri"]` (make the database files readable *only* by the trusted account).
+5.  You may want to adjust `log.py` to suit your needs and/or adjust system configuration. By default logging is done via syslog which handles multiple processes better than plain files.
+6.  Start the server via
 
     ```bash
     sage-cell-server [-p <PORT_NUMBER>]
