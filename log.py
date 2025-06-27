@@ -15,9 +15,9 @@ class StatsMessage(object):
         return json.dumps(self.msg)
 
 
-syslog = SysLogHandler(address="/dev/log", facility=SysLogHandler.LOG_LOCAL3)
-syslog.setFormatter(logging.Formatter(
-    "%(asctime)s %(process)5d %(name)-28s %(message)s"))
+# syslog = SysLogHandler(address="/dev/log", facility=SysLogHandler.LOG_LOCAL3)
+# syslog.setFormatter(logging.Formatter(
+#     "%(asctime)s %(process)5d %(name)-28s %(message)s"))
 
 # Default logger for SageCell
 logger = logging.getLogger("sagecell")
@@ -28,7 +28,7 @@ kernel_logger = logger.getChild("kernel")
 provider_logger = logger.getChild("provider")
 
 root = logging.getLogger()
-root.addHandler(syslog)
+# root.addHandler(syslog)
 root.setLevel(LOG_LEVEL)
 
 class TornadoFilter(logging.Filter):
