@@ -1,0 +1,8 @@
+# docker build --tag=passagemath-cell-server .
+# docker run --publish 8888 passagemath-cell-server
+FROM ubuntu:noble
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --yes python3 python3-pip && apt-get clean
+ADD . /passagemath-cell-server
+WORKDIR /passagemath-cell-server
+RUN pip install --break-system-packages .
+ENTRYPOINT sage-cell-server
