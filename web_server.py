@@ -38,7 +38,7 @@ def start_providers(port, providers, dir):
     """
     if not providers:
         # Use local
-        command = "sage-cell-kernel-provider {} '{}'".format(port, dir)
+        command = "sage-cell-kernel-provider {} '{}' &".format(port, dir)
         os.system(command)
         return
 
