@@ -9,7 +9,7 @@ import urllib
 import tornado.httpclient
 
 
-import db
+from . import db
 
 
 class DB(db.DB):
