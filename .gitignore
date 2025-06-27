@@ -20,5 +20,5 @@
 /sqlite.db
 node_modules
 
-/*.egg_info
+/*.egg-info
 *.pid
