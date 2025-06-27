@@ -55,11 +55,13 @@ provider_settings = {
     }
 
 # Location information for kernel providers
-provider_info = {
-    "host": "localhost",
-    "username": None,
-    "python": sage + " -python",
-    "location": os.path.dirname(os.path.abspath(__file__))
-    }
+## provider_info = {
+##     "host": "localhost",
+##     "username": None,
+##     "python": sage + " -python",
+##     "location": os.path.dirname(os.path.abspath(__file__))
+##     }
 
-providers = [provider_info]
+## providers = [provider_info]
+
+providers = []
