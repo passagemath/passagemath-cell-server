@@ -281,6 +281,8 @@ def setup_sage():
     try:
         from sage.plot.all import plot
         plot(1, (0, 1))
+    except ImportError:
+        pass
     except Exception:
         logger.exception("plotting exception")
 
