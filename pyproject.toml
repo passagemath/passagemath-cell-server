@@ -37,3 +37,9 @@ sage-cell-kernel-provider = "sagecell.kernel_provider:main"
 
 [tool.setuptools]
 package-dir = {"sagecell" = ""}
+
+[tool.setuptools.package-data]
+sagecell = [
+    "static/**",
+    "templates/**",
+]
