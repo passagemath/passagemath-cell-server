@@ -1,5 +1,6 @@
 import json
 import logging
+from logging import StreamHandler
 from logging.handlers import SysLogHandler
 import sys
 
@@ -19,6 +20,10 @@ class StatsMessage(object):
 # syslog.setFormatter(logging.Formatter(
 #     "%(asctime)s %(process)5d %(name)-28s %(message)s"))
 
+stderrlog = StreamHandler(sys.stderr)
+stderrlog.setFormatter(logging.Formatter(
+    "%(asctime)s %(process)5d %(name)-28s %(message)s"))
+
 # Default logger for SageCell
 logger = logging.getLogger("sagecell")
 permalink_logger = logger.getChild("permalink")
@@ -29,6 +34,7 @@ provider_logger = logger.getChild("provider")
 
 root = logging.getLogger()
 # root.addHandler(syslog)
+root.addHandler(stderrlog)
 root.setLevel(LOG_LEVEL)
 
 class TornadoFilter(logging.Filter):
