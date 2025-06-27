@@ -14,16 +14,16 @@ from .interact_sagecell import interact,Button,HtmlBox, UpdateButton
 ##########################################################
 class Exercise:
     def __init__(self, question, answer, check=None, hints=None):
-        import sage.all, sage.structure.element
+        import sage.all__sagemath_symbolics, sage.structure.element
         if not (isinstance(answer, (tuple, list)) and len(answer) == 2):
             if isinstance(answer, sage.structure.element.Matrix):
-                default = sage.all.parent(answer)(0)
+                default = sage.structure.element.parent(answer)(0)
             else:
                 default = ''
             answer = [answer, default]
 
         if check is None:
-            R = sage.all.parent(answer[0])
+            R = sage.structure.element.parent(answer[0])
             def check(attempt):
                 return R(attempt) == answer[0]
 

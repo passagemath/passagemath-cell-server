@@ -457,7 +457,7 @@ def safe_sage_eval(code, globs):
     """
     try:
         try:
-            from sage.all import sage_eval
+            from sage.misc.sage_eval import sage_eval
             return sage_eval(code, globs)
         except ImportError:
             return eval(code, globs)
@@ -1284,7 +1284,7 @@ def automatic_control(control, var=None):
     :rtype: InteractControl
     """
     from types import GeneratorType
-    from sage.all import parent
+    from sage.structure.element import parent
     from sage.plot.colors import Color
     from sage.structure.element import Matrix, Vector
 

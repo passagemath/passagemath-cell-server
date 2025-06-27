@@ -253,8 +253,7 @@ class KernelProvider(object):
 def setup_sage():
     # Non-existing startup file that users cannot create.
     os.environ["SAGE_STARTUP_FILE"] = "/init.sage"
-    import sage
-    import sage.all
+    import sage.all__sagemath_symbolics
     # override matplotlib and pylab show functions
     # TODO: use something like IPython's inline backend
     
@@ -275,7 +274,8 @@ def setup_sage():
     # because lots of things, like matplotlib, are imported).  We plot
     # something here so that worker processes don't have this overhead
     try:
-        sage.all.plot(1, (0, 1))
+        from sage.plot.all import plot
+        plot(1, (0, 1))
     except Exception:
         logger.exception("plotting exception")
 

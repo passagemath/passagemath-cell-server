@@ -20,7 +20,7 @@ from .log import StatsMessage, logger, stats_logger
 
 
 try:
-    from sage.all import gap, gp, maxima, r, singular
+    from sage.interfaces.all import gap, gp, maxima, r, singular
     tab_completion = {
         "gap": gap._tab_completion(),
         "gp": gp._tab_completion(),

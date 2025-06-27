@@ -163,7 +163,7 @@ def javascript(code):
 
 def sage_json(obj):
     # Similar to json_default in jupyter_client/jsonutil.py
-    import sage.all
+    import sage.all__sagemath_symbolics
     if isinstance(obj, datetime):
         return obj.isoformat()
     if isinstance(obj, sage.rings.integer.Integer):
