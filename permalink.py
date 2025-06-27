@@ -11,7 +11,7 @@ import zlib
 
 import tornado
 
-from log import permalink_logger as logger
+from .log import permalink_logger as logger
 
 
 class PermalinkHandler(tornado.web.RequestHandler):

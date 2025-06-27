@@ -5,8 +5,8 @@ import jupyter_client.session
 import tornado.ioloop
 import zmq
 
-from log import logger
-import misc
+from .log import logger
+from .import misc
 
 
 config = misc.Config()
