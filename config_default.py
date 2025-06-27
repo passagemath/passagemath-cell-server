@@ -2,16 +2,11 @@ import os.path
 
 
 # Location of the Sage executable
-if 'SAGE_ROOT' in os.environ:
-    # Assume that the worker should run the same Sage
-    # that is used to run the web server
-    sage = os.path.join(os.environ["SAGE_ROOT"], "sage")
-else:
-    # Assume both the web server and the worker have Sage in their paths
-    sage = "sage"
+# Assume both the web server and the worker have Sage in their paths
+sage = "sage"
 
-# Require the user to accept terms of service before evaluation
-requires_tos = True
+# Do not require the user to accept terms of service before evaluation
+requires_tos = False
 
 db = "sqlalchemy"
 db_config = {"uri": "sqlite:///sqlite.db"}
