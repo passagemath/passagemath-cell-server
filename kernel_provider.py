@@ -108,8 +108,8 @@ class KernelProvider(object):
         context = zmq.Context()
         context.IPV6 = 1
         self.dealer = context.socket(zmq.DEALER)
-        logger.debug("connecting to %s", address)
-        self.dealer.connect(address)
+        logger.debug("connecting to %s", dealer_address)
+        self.dealer.connect(dealer_address)
         self.dealer.send_json("get settings")
         if not self.dealer.poll(5000):
             logger.debug("dealer does not answer, terminating")
