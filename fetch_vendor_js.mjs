@@ -13,17 +13,17 @@ const TARGET_DIR = path.resolve(__dirname, "build/vendor");
 
 const URLS = {
     "base/js/utils.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/base/js/utils.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/utils.js",
     "base/js/namespace.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/base/js/namespace.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/namespace.js",
     "base/js/events.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/base/js/events.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/events.js",
     "services/kernels/kernel.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/services/kernels/kernel.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/kernel.js",
     "services/kernels/comm.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/services/kernels/comm.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/comm.js",
     "services/kernels/serialize.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/master/notebook/static/services/kernels/serialize.js",
+        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/serialize.js",
     "mpl.js":
         "https://raw.githubusercontent.com/matplotlib/matplotlib/main/lib/matplotlib/backends/web_backend/js/mpl.js",
 };
