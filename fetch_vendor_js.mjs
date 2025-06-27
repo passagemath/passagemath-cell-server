@@ -12,18 +12,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TARGET_DIR = path.resolve(__dirname, "build/vendor");
 
 const URLS = {
+    "jquery.min.js":
+        "https://code.jquery.com/jquery-3.7.1.min.js",
     "base/js/utils.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/utils.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/base/js/utils.js",
     "base/js/namespace.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/namespace.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/base/js/namespace.js",
     "base/js/events.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/base/js/events.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/base/js/events.js",
     "services/kernels/kernel.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/kernel.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/services/kernels/kernel.js",
     "services/kernels/comm.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/comm.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/services/kernels/comm.js",
     "services/kernels/serialize.js":
-        "https://raw.githubusercontent.com/jupyter/notebook/refs/heads/5.7.x/notebook/static/services/kernels/serialize.js",
+        "https://raw.githubusercontent.com/jupyter/nbclassic/master/nbclassic/static/services/kernels/serialize.js",
     "mpl.js":
         "https://raw.githubusercontent.com/matplotlib/matplotlib/main/lib/matplotlib/backends/web_backend/js/mpl.js",
 };
