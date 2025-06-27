@@ -14,7 +14,9 @@ all: $(all-min-js) $(embed-css) $(tos-static)
 
 .PHONY: $(tos-static)
 
-.PHONY: build
+.PHONY: all build
+
+FETCH_SAGE_DEPS=1
 
 build:
 	npm install
