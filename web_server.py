@@ -7,7 +7,6 @@ import signal
 import socket
 import struct
 
-import paramiko
 import psutil
 import tornado.ioloop
 import tornado.web
@@ -35,6 +34,7 @@ def start_providers(port, providers, dir):
     - ``dir`` -- directory name for user files saved by kernels
     """
     for config in providers:
+        import paramiko
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         client.connect(config["host"], username=config["username"])

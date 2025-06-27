@@ -10,7 +10,6 @@ version = "1.0.0"
 dependencies = [
     # from README.md
     'lockfile',
-    'paramiko',
     'sockjs-tornado',
     'sqlalchemy',
     # used by 'make build'
@@ -26,6 +25,11 @@ plot = [
     'jupyter-jsmol',
     # passagemath
     'passagemath-plot',
+]
+# For kernel providers accessed by ssh
+ssh = [
+    # from README.md
+    'paramiko',
 ]
 
 [project.scripts]
