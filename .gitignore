@@ -19,3 +19,6 @@
 /config.py
 /sqlite.db
 node_modules
+
+/*.egg_info
+*.pid
