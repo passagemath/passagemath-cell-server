@@ -54,7 +54,7 @@ class KernelProcess(Process):
         #config = traitlets.config.loader.Config({"ip": self.ip})
         #config.HistoryManager.enabled = False
         app = IPKernelApp.instance(log=logger)
-        from namespace import InstrumentedNamespace
+        from .namespace import InstrumentedNamespace
         app.user_ns = InstrumentedNamespace()
         app.initialize([])  # Redirects stdout/stderr
         #log.std_redirect(logger)   # Uncomment for debugging
