@@ -13,9 +13,19 @@ dependencies = [
     'paramiko',
     'sockjs-tornado',
     'sqlalchemy',
+    # used by 'make build'
+    'notebook',
     # passagemath
     'passagemath-repl',
     'passagemath-symbolics',
+]
+
+[project.optional-dependencies]
+plot = [
+    # used by 'make build'
+    'jupyter-jsmol',
+    # passagemath
+    'passagemath-plot',
 ]
 
 [project.scripts]
