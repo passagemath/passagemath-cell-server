@@ -4,7 +4,7 @@ import time
 
 import ipykernel.jsonutil
 
-import misc
+from . import misc
 
 
 def threejs(p, **kwds):

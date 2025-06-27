@@ -18,8 +18,8 @@ import uuid
 from ipykernel.kernelapp import IPKernelApp
 import zmq
 
-import kernel_init
-import log
+from . import kernel_init
+from . import log
 logger = log.provider_logger.getChild(str(os.getpid()))
 
 
