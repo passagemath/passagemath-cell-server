@@ -36,6 +36,12 @@ def start_providers(port, providers, dir):
     
     - ``dir`` -- directory name for user files saved by kernels
     """
+    if not providers:
+        # Use local
+        command = "sage-cell-kernel-provider {} '{}'".format(port, dir)
+        os.system(command)
+        return
+
     for config in providers:
         import paramiko
         client = paramiko.SSHClient()

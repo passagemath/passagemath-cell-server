@@ -292,7 +292,11 @@ def main():
     args = parser.parse_args()
 
     log.std_redirect(logger)
-    address = args.address or os.environ["SSH_CLIENT"].split()[0]
+    address = args.address
+    if not address and "SSH_CLIENT" in os.environ:
+        address = os.environ["SSH_CLIENT"].split()[0]
+    if not address:
+        address = 'localhost'
     if ":" in address:
         address = "[{}]".format(address)
     address = "tcp://{}:{}".format(address, args.port)
